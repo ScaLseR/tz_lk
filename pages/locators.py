@@ -19,3 +19,8 @@ class MailPageLocators:
     """locators for MailPage"""
     BTN_NEW_MAIL = (By.CSS_SELECTOR, '.compose-button__txt')
     BTN_NEW_MAIL_LINK = (By.CSS_SELECTOR, '.ico.ico_16-compose.ico_size_s')
+    PROMO_CONT = (By.CSS_SELECTOR, '.ph-project-promo-close-icon__container.svelte-m7oyyo')
+    ADDR_MAIL = (By.XPATH, '//input[@class="container--H9L5q size_s--3_M-_"]')
+    TOPIC = (By.CSS_SELECTOR, '[name="Subject"]')
+    MESSAGE = (By.XPATH, '/html/body/div[1]/div/div[2]/div/div/div/div[2]/div[3]/div[5]/div/div/div[2]/div[1]/div[1]')
+    BTN_SEND = (By.CSS_SELECTOR, '[data-test-id="send"]')
