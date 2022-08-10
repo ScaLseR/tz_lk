@@ -1,6 +1,7 @@
 """Mail Page Module"""
 from .base_page import BasePage
 from .locators import MailPageLocators
+from time import sleep
 
 
 class MailPage(BasePage):
@@ -12,6 +13,9 @@ class MailPage(BasePage):
 
     def click_btn_new_mail(self):
         """clicking button Enter"""
-        btn_log = self.browser.find_element(*MailPageLocators.BTN_NEW_MAIL)
+        if self.is_element_present(*MailPageLocators.BTN_NEW_MAIL):
+            btn_log = self.browser.find_element(*MailPageLocators.BTN_NEW_MAIL)
+        else:
+            btn_log = self.browser.find_element(*MailPageLocators.BTN_NEW_MAIL_LINK)
         btn_log.click()
 

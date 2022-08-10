@@ -18,3 +18,4 @@ class LoginPageLocators:
 class MailPageLocators:
     """locators for MailPage"""
     BTN_NEW_MAIL = (By.CSS_SELECTOR, '.compose-button__txt')
+    BTN_NEW_MAIL_LINK = (By.CSS_SELECTOR, '.ico.ico_16-compose.ico_size_s')
