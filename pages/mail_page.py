@@ -14,6 +14,8 @@ class MailPage(BasePage):
         self.fill_topic(text)
         self.fill_message(text)
         self.btn_send()
+        while not self.is_element_present(*MailPageLocators.SENT_PAGE):
+            self.browser.implicitly_wait(1)
 
     def click_btn_new_mail(self):
         """clicking button Enter"""
