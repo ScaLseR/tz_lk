@@ -2,7 +2,7 @@
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
 from pages.mail_page import MailPage
-from time import sleep
+
 
 _URL = 'https://mail.ru'
 _LOGIN = 'tz_lk'
@@ -20,4 +20,4 @@ def test_send_email(browser):
     login_page.authorized_user(_LOGIN, _PASSWORD)
     mail_page = MailPage(browser, browser.current_url)
     mail_page.send_mail(_EMAIL, _TEXT)
-    sleep(300)
+

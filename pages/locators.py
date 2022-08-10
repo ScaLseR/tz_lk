@@ -22,5 +22,5 @@ class MailPageLocators:
     PROMO_CONT = (By.CSS_SELECTOR, '.ph-project-promo-close-icon__container.svelte-m7oyyo')
     ADDR_MAIL = (By.XPATH, '//input[@class="container--H9L5q size_s--3_M-_"]')
     TOPIC = (By.CSS_SELECTOR, '[name="Subject"]')
-    MESSAGE = (By.XPATH, '/html/body/div[1]/div/div[2]/div/div/div/div[2]/div[3]/div[5]/div/div/div[2]/div[1]/div[1]')
+    MESSAGE = (By.CSS_SELECTOR, '[role="textbox"]')
     BTN_SEND = (By.CSS_SELECTOR, '[data-test-id="send"]')

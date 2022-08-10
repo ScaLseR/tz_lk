@@ -1,7 +1,6 @@
 """Mail Page Module"""
 from .base_page import BasePage
 from .locators import MailPageLocators
-from time import sleep
 
 
 class MailPage(BasePage):
@@ -15,7 +14,6 @@ class MailPage(BasePage):
         self.fill_topic(text)
         self.fill_message(text)
         self.btn_send()
-        sleep(300)
 
     def click_btn_new_mail(self):
         """clicking button Enter"""
