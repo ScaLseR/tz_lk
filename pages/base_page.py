@@ -10,21 +10,21 @@ class BasePage:
         self.url = url
         self.browser.implicitly_wait(timeout)
 
-    def open(self):
+    def open(self) -> None:
         """open page"""
         self.browser.get(self.url)
 
-    def go_to_login_page(self):
+    def go_to_login_page(self) -> None:
         """go to authorization page"""
         link = self.browser.find_element(*BasePageLocators.MAIL_LINK)
         link.click()
 
-    def go_to_new_window(self):
+    def go_to_new_window(self) -> None:
         """go to new window in browser"""
         new_window = self.browser.window_handles[1]
         self.browser.switch_to.window(new_window)
 
-    def is_element_present(self, how, what):
+    def is_element_present(self, how: str, what: str) -> bool:
         """find element on page"""
         try:
             self.browser.find_element(how, what)

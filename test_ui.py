@@ -11,7 +11,7 @@ _EMAIL = 'tz_lk@mail.ru'
 _TEXT = 'Выполнение ТЗ Скорик А.С.'
 
 
-def test_send_email(browser):
+def test_send_email(browser) -> None:
     """test case"""
     page = MainPage(browser, _URL)
     page.open()

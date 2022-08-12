@@ -6,7 +6,7 @@ from .locators import LoginPageLocators
 class LoginPage(BasePage):
     """class for work with login page"""
 
-    def authorized_user(self, login, password):
+    def authorized_user(self, login: str, password: str) -> None:
         """user authorization """
         self.go_to_new_window()
         self.enter_login(login)
@@ -14,22 +14,22 @@ class LoginPage(BasePage):
         self.enter_password(password)
         self.click_btn_ent()
 
-    def enter_login(self, login):
+    def enter_login(self, login: str) -> None:
         """entering login into field email"""
         inp_login = self.browser.find_element(*LoginPageLocators.EMAIL)
         inp_login.send_keys(login)
 
-    def click_btn_nxt(self):
+    def click_btn_nxt(self) -> None:
         """clicking button Next"""
         btn_log = self.browser.find_element(*LoginPageLocators.BTN_NEXT)
         btn_log.click()
 
-    def click_btn_ent(self):
+    def click_btn_ent(self) -> None:
         """clicking button Enter"""
         btn_log = self.browser.find_element(*LoginPageLocators.BTN_ENTER)
         btn_log.click()
 
-    def enter_password(self, password):
+    def enter_password(self, password: str) -> None:
         """entering password into field password"""
         inp_pass = self.browser.find_element(*LoginPageLocators.PASS)
         inp_pass.send_keys(password)
