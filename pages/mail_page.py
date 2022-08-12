@@ -14,8 +14,6 @@ class MailPage(BasePage):
         self.fill_topic(text)
         self.fill_message(text)
         self.btn_send()
-        while not self.is_element_present(*MailPageLocators.SENT_PAGE):
-            self.browser.implicitly_wait(1)
 
     def click_btn_new_mail(self) -> None:
         """clicking button Enter"""
@@ -45,7 +43,16 @@ class MailPage(BasePage):
         inp_mess = self.browser.find_element(*MailPageLocators.MESSAGE)
         inp_mess.send_keys(text)
 
-    def btn_send(self):
+    def btn_send(self) -> None:
         """click send button"""
         btn_send = self.browser.find_element(*MailPageLocators.BTN_SEND)
         btn_send.click()
+
+    def check_sending(self) -> bool:
+        """check sending mail"""
+        while not self.is_element_present(*MailPageLocators.SENT_PAGE):
+            self.browser.implicitly_wait(1)
+        message = self.browser.find_element(*MailPageLocators.SENDING_TEXT)
+        if message.text == 'Письмо отправлено':
+            return True
+        return False

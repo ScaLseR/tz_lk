@@ -25,3 +25,4 @@ class MailPageLocators:
     MESSAGE = (By.CSS_SELECTOR, '[role="textbox"]')
     BTN_SEND = (By.CSS_SELECTOR, '[data-test-id="send"]')
     SENT_PAGE = (By.CSS_SELECTOR, '.layer-sent-page')
+    SENDING_TEXT = (By.CSS_SELECTOR, '.layer__link')
