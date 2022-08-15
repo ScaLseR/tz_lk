@@ -20,5 +20,5 @@ def test_send_email(browser) -> None:
     login_page.authorized_user(_LOGIN, _PASSWORD)
     mail_page = MailPage(browser, browser.current_url)
     mail_page.send_mail(_EMAIL, _TEXT)
-    assert mail_page.check_sending(), 'Письмо не отправлено'
+    assert mail_page.check_sending(), 'Письмо отправлено'
 
