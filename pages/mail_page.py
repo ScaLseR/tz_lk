@@ -25,8 +25,7 @@ class MailPage(BasePage):
 
     def check_sending(self) -> bool:
         """check sending mail"""
-        while not self.is_element_present(*MailPageLocators.SENT_PAGE):
-            self.browser.implicitly_wait(1)
+        self.wait(*MailPageLocators.SENT_PAGE)
         message = self.browser.find_element(*MailPageLocators.SENDING_TEXT)
         if message.text == 'Письмо отправлено':
             return True

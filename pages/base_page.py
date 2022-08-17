@@ -24,10 +24,10 @@ class BasePage:
         new_window = self.browser.window_handles[1]
         self.browser.switch_to.window(new_window)
 
-    def is_element_present(self, how: str, what: str) -> bool:
+    def is_element_present(self, *args) -> bool:
         """find element on page"""
         try:
-            self.browser.find_element(how, what)
+            self.browser.find_element(*args)
         except NoSuchElementException:
             return False
         return True
@@ -41,3 +41,8 @@ class BasePage:
         """clicking button"""
         btn_log = self.browser.find_element(*args)
         btn_log.click()
+
+    def wait(self, *args):
+        """waiting element"""
+        self.browser.implicitly_wait(5)
+        self.browser.find_element(*args)
