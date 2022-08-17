@@ -1,5 +1,5 @@
 """Base Page Module"""
-from .locators import BasePageLocators
+from locators import BasePageLocators
 from selenium.common.exceptions import NoSuchElementException
 
 
@@ -31,3 +31,13 @@ class BasePage:
         except NoSuchElementException:
             return False
         return True
+
+    def enter_text_to_input(self, text: str, *args):
+        """entering text into field"""
+        inp_text = self.browser.find_element(*args)
+        inp_text.send_keys(text)
+
+    def click_btn(self, *args):
+        """clicking button"""
+        btn_log = self.browser.find_element(*args)
+        btn_log.click()
